@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.util.Collections;
 import java.util.ArrayList;
 
@@ -48,8 +47,32 @@ class Card {
     }
 }
 
-class Hand {
+class Deck {
     private ArrayList<Card> cards;
+
+    public Deck() {
+        cards = new ArrayList<>();
+        String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
+        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
+
+        for (String suit : suits) {
+            for (String rank : ranks) {
+                cards.add(new Card(suit, rank));
+            }
+        }
+    }
+
+    public void shuffle() {
+        Collections.shuffle(cards);
+    }
+
+    public Card dealCard() {
+        return cards.remove(cards.size());
+    }
+}
+
+class Hand {
+    public ArrayList<Card> cards;
 
     public Hand() {
         cards = new ArrayList<>();
@@ -85,12 +108,14 @@ class Hand {
     }
 }
 
+
 public class Main {
     public static void main(String[] args) {
         BlackjackGame game = new BlackjackGame();
         game.startGame();
     }
 }
+    
 
 /*
  *Cards = (ace(needs to be 1 or 11), 2-10, jack(worth 10), queen(worth 10), king(worth 10))
