@@ -8,7 +8,7 @@ public class Deck {
     //creates a deck of cards
     public Deck() {
         cards = new Stack<>();
-        String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
+        String[] suits = {"Hearts", "Spades", "Clubs", "Diamonds"};
         String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
 
         for (String suit : suits) {

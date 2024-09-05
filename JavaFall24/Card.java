@@ -23,7 +23,7 @@ public class Card {
     public int getValue() {
         switch (rank) {
             case "Ace":
-                return 1;
+                return 11;
             case "2":
                 return 2;
             case "3":
