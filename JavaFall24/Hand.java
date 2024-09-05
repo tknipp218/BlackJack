@@ -8,7 +8,6 @@ public class Hand {
     //constructor
     public Hand() {
         cards = new ArrayList<>();
-
     }
 
     //adds a card to the hand

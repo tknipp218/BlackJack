@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class BlackjackGame {
+public class BlackJackGame {
     //instance variables
     private Deck deck;
     private Hand playerHand;
@@ -8,7 +8,7 @@ public class BlackjackGame {
     private Scanner scanner;
 
     //sets up the game
-    public BlackjackGame() {
+    public BlackJackGame() {
         deck = new Deck();
         deck.shuffle();
         playerHand = new Hand();
