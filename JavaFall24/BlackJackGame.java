@@ -103,9 +103,14 @@ public class BlackJackGame {
                     System.out.println("Are you sure you want to quit? (y/n)");
                     String response2 = scanner.nextLine();
                     if (response2.equals("y")) {
-                        System.out.println("Everyone quits before their big win. ");
+                        System.out.println("Everyone quits before their big win. Try again (y/n)");
+                        String response3 = scanner.nextLine();
+                        if (!response3.equals("y")) {
+                            System.out.println("Come back when you're ready to win big!");
+                            System.out.println("Final chip count: " + betting.getPlayerChips());
+                            break;      
+                        }
                     }
-                    break;
                 }
             }
         } finally {
