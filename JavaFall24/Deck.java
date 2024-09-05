@@ -2,8 +2,10 @@ import java.util.Collections;
 import java.util.Stack;
 
 public class Deck {
+    //stack of cards
     private Stack<Card> cards;
 
+    //creates a deck of cards
     public Deck() {
         cards = new Stack<>();
         String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
@@ -16,10 +18,12 @@ public class Deck {
         }
     }
 
+    //shuffles the deck
     public void shuffle() {
         Collections.shuffle(cards);
     }
 
+    //deals a card from the deck
     public Card dealCard() {
         if (cards.isEmpty()) {
             throw new IllegalStateException("Deck is empty");

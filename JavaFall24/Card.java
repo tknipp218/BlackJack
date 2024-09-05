@@ -1,20 +1,25 @@
 public class Card {
+    //instance variables
     private String suit;
     private String rank;
 
+    //establishes the suit and rank of the card
     public Card(String suit, String rank) {
         this.suit = suit;
         this.rank = rank;
     }
 
+    //gets the suit of the card
     public String getSuit() {
         return suit;
     }
 
+    //gets the rank of the card
     public String getRank() {
         return rank;
     }
 
+    //gets the value of the card
     public int getValue() {
         switch (rank) {
             case "Ace":
@@ -46,6 +51,7 @@ public class Card {
         }
     }
 
+    //returns the rank and suit of the card
     @Override
     public String toString() {
         return rank + " of " + suit;
