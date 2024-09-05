@@ -50,7 +50,7 @@ public class Card {
             
         }
     }
-
+    
     //returns the rank and suit of the card
     @Override
     public String toString() {

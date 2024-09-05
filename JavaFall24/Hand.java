@@ -37,6 +37,10 @@ public class Hand {
         return value;
     }
 
+    public void clear() {
+        cards.clear();
+    }
+
     //returns the list of cards in the hand
     @Override
     public String toString() {

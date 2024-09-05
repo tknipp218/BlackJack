@@ -1,19 +1,38 @@
 public class Betting {
-    int playerChips;
-    int betAmount;
+    private int playerChips;
+    private int betAmount;
     
-    public int winBet() {
-        return playerChips += (betAmount * 2);
+    public Betting(int initialChips) {
+        this.playerChips = initialChips;
     }
 
-    public double winBlackjack() {
-        return playerChips += (betAmount * 2 * 1.5);
+    public boolean placeBet(int amount) {
+        if (amount > playerChips) {
+            System.out.println("You don't have enough chips to place that bet.");
+            return false;
+        }
+        this.betAmount = amount;
+        playerChips -= amount;
+        return true;
     }
 
-    public double loseBet() {
-        double playerChips -= double betAmount;
+    public void winBet() {
+        playerChips += (betAmount * 2);
+        betAmount = 0;
     }
-    
+
+    public void winBlackJack() {
+        playerChips += (betAmount * 2.5);
+        betAmount = 0;
+    }
+
+    public void loseBet() {
+        betAmount = 0;
+    }
+
+    public int getPlayerChips() {
+        return playerChips;
+    }
 }
 
 
