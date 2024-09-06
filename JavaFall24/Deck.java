@@ -26,7 +26,8 @@ public class Deck {
     //deals a card from the deck
     public Card dealCard() {
         if (cards.isEmpty()) {
-            throw new IllegalStateException("Deck is empty");
+            System.out.println("Deck is empty. Shuffling...");
+            shuffle();
         }
         return cards.pop();
     }
