@@ -30,6 +30,10 @@ public class Betting {
         betAmount = 0;
     }
 
+    public void tieBet() {
+        playerChips += betAmount;
+    }
+
     public int getPlayerChips() {
         return playerChips;
     }

@@ -37,6 +37,10 @@ public class Hand {
         return value;
     }
 
+    public Card get(int index) {
+        return cards.get(index);
+    }
+
     public void clear() {
         cards.clear();
     }

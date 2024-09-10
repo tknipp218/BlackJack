@@ -22,7 +22,9 @@ public class BlackJackGame {
     public void startGame() {
         try {
             while (true) {
-                System.out.println("You have " + betting.getPlayerChips() + " chips.");
+                Thread.sleep(1000);
+                System.out.println("\nYou have " + betting.getPlayerChips() + " chips.");
+                Thread.sleep(1000);
                 System.out.println("Place your bet: ");
                 int betAmount = scanner.nextInt();
                 scanner.nextLine();
@@ -41,19 +43,22 @@ public class BlackJackGame {
                 dealerHand.addCard(deck.dealCard());
 
                 if (playerHand.getValue() == 21) {
-                    System.out.println("Player has a blackjack!");
+                    Thread.sleep(1000);
+                    System.out.println("\nPlayer has a blackjack!");
                     betting.winBlackJack();
                     continue;
                 }
 
                 //player's turn
                 while (true) {
-                    System.out.println("Player hand: " + playerHand);
+                    System.out.println("\nPlayer hand: " + playerHand);
+                    System.out.println("Dealer hand: " + dealerHand.get(0));
                     if (playerHand.getValue() > 21) {
-                        System.out.println("Player busts!");
+                        System.out.println("You just BUSTamante'd!");
                         betting.loseBet();
                         break;
                     }
+                    Thread.sleep(1000);
                     System.out.println("Do you want to hit or stand? (h/s)");
                     String input = scanner.nextLine();
                     if (input.equals("h")) {
@@ -72,22 +77,29 @@ public class BlackJackGame {
                 int playerValue = playerHand.getValue();
                 int dealerValue = dealerHand.getValue();
             
-                System.out.println("Player's hand: " + playerValue);
+                Thread.sleep(1000);
+                System.out.println("\nPlayer's hand: " + playerValue);
                 System.out.println("Dealer's hand: " + dealerValue);
 
                 //determines the winner
                 if (playerValue > 21) {
-                    System.out.println("Dealer wins!");
+                    Thread.sleep(1000);
+                    System.out.println("\nDealer wins!");
                 } else if (dealerValue > 21) {
-                    System.out.println("Player wins!");
+                    Thread.sleep(1000);
+                    System.out.println("\nPlayer wins!");
                     betting.winBet();
                 } else if (playerValue > dealerValue) {
-                    System.out.println("Player wins!");
+                    Thread.sleep(1000);
+                    System.out.println("\nPlayer wins!");
                     betting.winBet();
                 } else if (dealerValue > playerValue) {
-                    System.out.println("Dealer wins!");
+                    Thread.sleep(1000);
+                    System.out.println("\nDealer wins!");
                 } else {
-                    System.out.println("It's a tie!");
+                    Thread.sleep(1000);
+                    System.out.println("\nIt's a tie!");
+                    betting.tieBet();    
                 }
 
                 if (betting.getPlayerChips() == 0) {
@@ -113,6 +125,8 @@ public class BlackJackGame {
                     }
                 }
             }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         } finally {
             scanner.close();
         }
